@@ -2,6 +2,7 @@ class FundRequestsController < ApplicationController
   skip_before_action :authenticate_user!
 
   def new
+    @casa_case = CasaCase.find_by(case_number: params[:casa_case_id])
     @fund_request = FundRequest.new
   end
 
